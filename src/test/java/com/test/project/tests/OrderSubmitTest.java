@@ -59,7 +59,7 @@ public class OrderSubmitTest {
             orderSubmissionFunction.typeSearchWord("tshirt for women");
             orderSubmissionFunction.addItemsToCart();
             orderSubmissionFunction.deleteItemFromSideBarCart();
-            Assert.assertTrue(shoppingCartPage.isSubTotalDisplayed());//Assert the sub total
+            Assert.assertTrue(shoppingCartPage.isSubTotalDisplayed());//Assert the subtotal
 
         } catch (Exception ex) {
             log.info("searchItemAndAddAndRemoveFromCart : FAIL");
