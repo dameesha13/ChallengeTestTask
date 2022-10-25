@@ -6,11 +6,12 @@ import org.openqa.selenium.WebDriver;
 
 public class CreateNewAccountPage extends BaseClass {
 
-    private final By nameTxt = By.xpath("//*[@id=\"ap_customer_name\"]");
-    private final By emailTxt = By.xpath("//*[@id=\"ap_email\"]");
-    private final By passwordTxt = By.xpath("//*[@id=\"ap_password\"]");
-    private final By reTypePasswordTxt = By.xpath("//*[@id=\"ap_password_check\"]");
-    private final By continueBtn = By.xpath("//*[@id=\"continue\"]");
+    private final By nameTxt = By.id("ap_customer_name");
+    private final By emailTxt = By.id("ap_email");
+    private final By passwordTxt = By.id("ap_password");
+    private final By reTypePasswordTxt = By.id("ap_password_check");
+    private final By continueBtn = By.id("continue");
+
     public CreateNewAccountPage(WebDriver driver) {
         super(driver);
     }

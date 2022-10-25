@@ -7,24 +7,22 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CheckoutPage extends BaseClass {
 
-    //after clicking buy now
-
     private final By titleOfPage = By.xpath("//*[@class=\"a-column a-span8\"]");
     private final By titleLink = By.xpath("//*[@class=\"a-color-link clickable-heading\"]");
     private final By enterShippingAddress = By.xpath("//*[@class=\"a-column a-span10\"]");
-    private final By btnAutoFill = By.xpath("//*[@id=\"address-ui-widgets-DetectLocationButton-announce\"]");
+    private final By btnAutoFill = By.id("address-ui-widgets-DetectLocationButton-announce");
     private final By ddCountry = By.xpath("//span[@id='address-ui-widgets-countryCode']");
-    private final By txtFullName = By.xpath("//*[@id=\"address-ui-widgets-enterAddressFullName\"]");
-    private final By txtPhoneNo = By.xpath("//*[@id=\"address-ui-widgets-enterAddressPhoneNumber\"]");
-    private final By txtAddress = By.xpath("//*[@id=\"address-ui-widgets-enterAddressLine1\"]");
-    private final By txtCity = By.xpath("//*[@id=\"address-ui-widgets-enterAddressCity\"]");
+    private final By txtFullName = By.id("address-ui-widgets-enterAddressFullName");
+    private final By txtPhoneNo = By.id("address-ui-widgets-enterAddressPhoneNumber");
+    private final By txtAddress = By.id("address-ui-widgets-enterAddressLine1");
+    private final By txtCity = By.id("address-ui-widgets-enterAddressCity");
     private final By ddState = By.xpath("//span[@id='address-ui-widgets-enterAddressStateOrRegion']");
-    private final By txtZipCode = By.xpath("//*[@id=\"address-ui-widgets-enterAddressPostalCode\"]");
-    private final By chkDefaultAddress = By.xpath("//*[@id=\"address-ui-widgets-use-as-my-default\"]");
+    private final By txtZipCode = By.id("address-ui-widgets-enterAddressPostalCode");
+    private final By chkDefaultAddress = By.id("address-ui-widgets-use-as-my-default");
     private final By btnUseThisAddress = By.xpath("//input[@aria-labelledby='address-ui-widgets-form-submit-button-announce']); //xpath://*[@id=\"address-ui-widgets-form-submit-button-announce\"]");
-    private final By btnUseThisAddressPrimary = By.xpath("//*[@id=\"orderSummaryPrimaryActionBtn-announce\"]");
+    private final By btnUseThisAddressPrimary = By.id("orderSummaryPrimaryActionBtn-announce");
     private final By btnEdit = By.xpath("(//a[normalize-space()='Edit'])[1]");
-    private final By addNewAddress = By.xpath("//*[@id=\"add-new-address-popover-link\"]");
+    private final By addNewAddress = By.id("add-new-address-popover-link");
     private final By returnToCartPopUp = By.xpath("(//a[@id='a-autoid-3-announce'])[1]");
     private final By StayInCheckoutPopUp = By.xpath("(//input[@type='submit'])[7]");
     //add payment method
@@ -35,27 +33,35 @@ public class CheckoutPage extends BaseClass {
     private final By btnApply = By.xpath("//*[@name=\"ppw-claimCodeApplyPressed\"]");
     private final By txtCardNo = By.xpath("//*[@name=\"addCreditCardNumber\"]");
     private final By txtNameOnCard = By.xpath("//*[@name=\"ppw-accountHolderName\"]");
-    private final By ddExpireDateMonth = By.xpath("//*[@id=\"pp-yuKA3J-19\"]");//Select class
+    private final By ddExpireDateMonth = By.id("pp-yuKA3J-19");
     private final By ddExpireDateYear = By.xpath("//*[@name=\"ppw-expirationDate_year\"]");
     private final By btnAddYourCard = By.xpath("//*[@name=\"ppw-widgetEvent:AddCreditCardEvent\"]");
-    private final By btnCancel = By.xpath("//*[@id=\"pp-yuKA3J-26-announce\"]");
+    private final By btnCancel = By.id("pp-yuKA3J-26-announce");
     private final By btnLearnMore = By.xpath("//*[@class=\"a-button a-button-base\"]");
-    private final By btnClose = By.xpath("");
-    private final By btnUseThisPaymentMethod = By.xpath("//*[@id=\"orderSummaryPrimaryActionBtn-announce\"]");
+    private final By btnUseThisPaymentMethod = By.id("orderSummaryPrimaryActionBtn-announce");
     private final By lblOrderTotal = By.xpath("(//td[contains(text(),'Order total:')])[2]");
     private final By linkHowShippingCostCalculated = By.xpath("(//a[normalize-space()='How are shipping costs calculated?'])[1]");
     private final By headerOffers = By.xpath("//h3[contains(text(),'Offers')]");
     private final By headerItemsAndShipping = By.xpath("(//a[normalize-space()='How are shipping costs calculated?'])[1]");
+
     public CheckoutPage(WebDriver driver) {
         super(driver);
     }
 
-    public Boolean isTitleDisplayed() {
-        return driver.findElement(titleOfPage).isDisplayed();
+    public Boolean isTitleDisplayed() throws Exception {
+        try {
+            return driver.findElement(titleOfPage).isDisplayed();
+        } catch (Exception ex) {
+            throw ex;
+        }
     }
 
-    public Boolean isTitleLinkDisplayed() {
-        return driver.findElement(titleLink).isDisplayed();
+    public Boolean isTitleLinkDisplayed() throws Exception {
+        try {
+            return driver.findElement(titleLink).isDisplayed();
+        } catch (Exception ex) {
+            throw ex;
+        }
     }
 
     public void clickItemLinkInCheckout() throws Exception {
@@ -108,9 +114,8 @@ public class CheckoutPage extends BaseClass {
 
     public void selectCountry() throws Exception {
         try {
-            //driver.findElement(ddCountry).click();
-        /*Select dropdown = new Select(driver.findElement(By.id("address-ui-widgets-countryCode")));
-        dropdown.selectByVisibleText("Sri Lanka");*/
+            Select se = new Select(driver.findElement(By.xpath("//*[@id=\"address-ui-widgets-countryCode-dropdown-nativeId\"]")));
+            se.selectByValue("207");
         } catch (Exception ex) {
             throw ex;
         }

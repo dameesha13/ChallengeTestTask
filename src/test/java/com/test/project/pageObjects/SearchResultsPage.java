@@ -48,15 +48,13 @@ public class SearchResultsPage extends BaseClass {
     private final By selectItemAfterPagination = By.xpath("(//div[@class='a-section a-spacing-base'])[1]");
     private final By selectFourthItemInResults = By.xpath("(//div[@class='a-section a-spacing-base'])[4]");
 
-
-
     public SearchResultsPage(WebDriver driver) {
         super(driver);
     }
 
     public boolean isResultsDisplayed() throws Exception {
         try {
-           return driver.findElement(resultsTitle).isDisplayed();
+            return driver.findElement(resultsTitle).isDisplayed();
         } catch (Exception ex) {
             throw ex;
         }
@@ -88,7 +86,6 @@ public class SearchResultsPage extends BaseClass {
 
     public void selectPriceLowToHighInSortBy() throws Exception {
         try {
-            //driver.findElement(selectPriceLowToHigh).click();
             Select se = new Select(driver.findElement(By.xpath("//*[@id=\"s-result-sort-select\"]")));
             se.selectByIndex(1);
         } catch (Exception ex) {
@@ -128,6 +125,7 @@ public class SearchResultsPage extends BaseClass {
             throw ex;
         }
     }
+
     public void clickNextButton() throws Exception {
         try {
             driver.findElement(btnNextInPagination).click();
@@ -135,6 +133,7 @@ public class SearchResultsPage extends BaseClass {
             throw ex;
         }
     }
+
     public void selectCurrentPageInPagination() throws Exception {
         try {
             driver.findElement(btnCurrentPageInPagination).click();
@@ -142,6 +141,7 @@ public class SearchResultsPage extends BaseClass {
             throw ex;
         }
     }
+
     public void selectThirdPageInPagination() throws Exception {
         try {
             driver.findElement(btnThirdPageInPagination).click();

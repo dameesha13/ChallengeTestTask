@@ -18,7 +18,6 @@ public class LoginFunction {
 
     public void loginToAmazonFunction(String email, String password) throws Exception {
         try {
-            Thread.sleep(1000);
             loginPage.hoverSignInButtonBefore();
             loginPage.clickInitialSignButton();
             loginPage.enterEmail(email);
@@ -40,11 +39,5 @@ public class LoginFunction {
             throw ex;
         }
     }
-
-   /* public boolean signOutFunction() throws Exception {
-        loginPage.clickSignOutButton();
-        return loginPage.isRedirectToSignInPageDisplayed();
-    }*/
-
 
 }

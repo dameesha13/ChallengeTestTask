@@ -17,19 +17,16 @@ public class ShoppingCartPage extends BaseClass {
     private final By lblSubTotal = By.xpath("(//span[@id='sc-subtotal-label-activecart'])[1]");
 
     public ShoppingCartPage(WebDriver driver) {
-
         super(driver);
     }
-   /* private final By searchIcon = By.xpath("");
-    private final By searchIcon = By.xpath("");*/
 
-   public boolean showItemList() throws Exception {
-       try {
-           return driver.findElement(itemList).isDisplayed();
-       } catch (Exception ex) {
-           throw ex;
-       }
-   }
+    public boolean showItemList() throws Exception {
+        try {
+            return driver.findElement(itemList).isDisplayed();
+        } catch (Exception ex) {
+            throw ex;
+        }
+    }
 
     public boolean isSubTotalDisplayed() throws Exception {
         try {
@@ -86,6 +83,4 @@ public class ShoppingCartPage extends BaseClass {
             throw ex;
         }
     }
-
-
 }

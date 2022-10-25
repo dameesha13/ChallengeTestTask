@@ -9,20 +9,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class ProductPage extends BaseClass {
-
-    //select an item from results page then redirect to new page
 
     private final By btnAddToCart = By.xpath("(//input[@class='a-button-input'])[2]");
     private final By btnShare = By.xpath("(//input[@data-share='{\"background\": false, \"icon\": false}'])[1]");
     private final By btnBuyNow = By.xpath("(//input[@id='buy-now-button'])[1]");
-    private final By ddQty = By.xpath("//*[@class=\"a-button a-button-dropdown a-button-small\"]");
     private final By selectValueFromQty = By.xpath("(//a[normalize-space()='2'])[1]");
-    private final By btnAddToList = By.xpath("//*[@id=\"add-to-wishlist-button-submit\"]");
+    private final By btnAddToList = By.id("add-to-wishlist-button-submit");
     private final By title = By.id("productTitle");
     private final By selectDifferentColorFromProductPage = By.xpath("(//img[@alt='Black'])[1]");
+
     public ProductPage(WebDriver driver) {
 
         super(driver);
@@ -32,7 +28,7 @@ public class ProductPage extends BaseClass {
         try {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='add-to-cart-button']")));
-            ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
         } catch (Exception ex) {
             throw ex;
         }
@@ -52,9 +48,6 @@ public class ProductPage extends BaseClass {
         } catch (Exception ex) {
             throw ex;
         }
-        //driver.findElement(By.cssSelector("#buy-now-button")).click();
-        //driver.findElement(By.id("nav-link-accountList")).click();
-
     }
 
     public void clickAddToList() throws Exception {
@@ -67,7 +60,6 @@ public class ProductPage extends BaseClass {
 
     public void clickQuantityDropDown() throws Exception {
         try {
-            //driver.findElement(ddQty).click();
             Select se = new Select(driver.findElement(By.xpath("//*[@id=\"quantity\"]")));
             se.selectByIndex(2);
         } catch (Exception ex) {
@@ -93,12 +85,9 @@ public class ProductPage extends BaseClass {
 
     public void clickShare() throws Exception {
         try {
-
             driver.findElement(btnShare).click();
         } catch (Exception ex) {
             throw ex;
         }
     }
-
-
 }

@@ -18,20 +18,13 @@ public class OrderSubmissionFunction {
     private final ShoppingCartPage shoppingCartPage;
 
     public OrderSubmissionFunction(WebDriver driver) {
-
         homePage = new HomePage(driver);
         productPage = new ProductPage(driver);
         searchResults = new SearchResultsPage(driver);
         checkoutPage = new CheckoutPage(driver);
         cartViewPage = new CartViewPage(driver);
         shoppingCartPage = new ShoppingCartPage(driver);
-
     }
-
-  /*  public ProductPage getProductPage() throws Exception{
-
-        return productPage;
-    }*/
 
     public HomePage getHomePage() throws Exception {
         try {
@@ -98,12 +91,10 @@ public class OrderSubmissionFunction {
             Thread.sleep(10000);
             searchResults.selectColor();
             Thread.sleep(10000);
-            //searchResults.selectAnItem();
         } catch (Exception ex) {
             throw ex;
         }
     }
-
 
     public void selectPagination(String min, String max) throws Exception {
         try {
@@ -165,8 +156,5 @@ public class OrderSubmissionFunction {
         } catch (Exception ex) {
             throw ex;
         }
-
     }
-
-
 }

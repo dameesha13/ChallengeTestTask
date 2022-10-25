@@ -3,19 +3,21 @@ package com.test.project.pageObjects;
 import com.test.project.utils.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class HomePage extends BaseClass {
 
-    private final By btnDelivery = By.xpath("//*[@id=\"glow-ingress-block\"]");
-    private final By ddAll = By.xpath("//*[@class=\"nav-search-scope nav-sprite nav-focus\"]");
-    private final By searchTxt = By.xpath("//*[@id=\"twotabsearchtextbox\"]");
-    private final By searchIcon = By.xpath("//*[@id=\"nav-search-submit-button\"]");
+    private final By btnDelivery = By.id("glow-ingress-block");
+    private final By ddAll = By.xpath("//*[@class=\"nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown\"]");
+    private final By searchTxt = By.id("twotabsearchtextbox");
+    private final By searchIcon = By.id("nav-search-submit-button");
     private final By language = By.xpath("//*[@class=\"icp-nav-link-inner\"]");
-    private final By accountAndList = By.xpath("//*[@id=\"nav-link-accountList\"]");
+    private final By accountAndList = By.id("nav-link-accountList");
     private final By returnsAndOrders = By.xpath("//*[@class=\"nav-a nav-a-2   nav-progressive-attribute\"]");
     private final By btnCart = By.xpath("//*[@class=\"nav-cart-count nav-cart-1 nav-progressive-attribute nav-progressive-content\"]");
-    private final By signOut = By.xpath("//*{@id=\"nav-item-signout\"]");
+    private final By signOut = By.xpath("nav-item-signout");
     private final By lblUserName = By.xpath("(//span[@id='nav-link-accountList-nav-line-1'])[1]");
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -88,6 +90,15 @@ public class HomePage extends BaseClass {
     public void clickSignOut() throws Exception {
         try {
             driver.findElement(signOut).click();
+        } catch (Exception ex) {
+            throw ex;
+        }
+    }
+
+    public void selectOptionFromAllDropdown() throws Exception {
+        try {
+            Select se = new Select(driver.findElement(By.xpath("//*[@class=\"nav-search-dropdown searchSelect nav-progressive-attrubute nav-progressive-search-dropdown\"]")));
+            se.selectByValue("1");
         } catch (Exception ex) {
             throw ex;
         }

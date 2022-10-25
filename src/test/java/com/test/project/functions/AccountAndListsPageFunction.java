@@ -24,19 +24,8 @@ public class AccountAndListsPageFunction {
         }
     }
 
-    public void loginToAmazonFunction(String email, String password) throws Exception {
-        try {
-            //accountListPage.clickSignOutLink();
-        } catch (Exception ex) {
-            throw ex;
-        }
-    }
-
     public boolean signOutFunction() throws Exception {
         try {
-        /*Actions action = new Actions(driver);
-        action.moveToElement( accountListPage.clickAccountAndList()).perform();*/
-            //loginPage.hoverSignInButtonBefore();
             accountListPage.clickSignOutLink();
             return accountListPage.isRedirectToSignInPageDisplayed();
         } catch (Exception ex) {

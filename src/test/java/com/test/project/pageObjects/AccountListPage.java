@@ -29,6 +29,7 @@ public class AccountListPage extends BaseClass {
     private final By linkFindListOrRegistryList = By.xpath("//span[normalize-space()='Find a List or Registry']");
     private final By linkAmazonSmileCharityLists = By.xpath("//span[normalize-space()='AmazonSmile Charity Lists']");
     private final By signInHeaderText = By.xpath("//h1[normalize-space()='Sign in']");
+
     public AccountListPage(WebDriver driver) {
 
         super(driver);
@@ -36,7 +37,6 @@ public class AccountListPage extends BaseClass {
 
     public void mouseHoverAccountList() throws Exception {
         try {
-            //themeModeButton.replaceValues(buttonProp.getDataTestId(), buttonName).getUIActions().mouseMoveHere();
             Actions actions = new Actions(driver);
             WebElement accountList = driver.findElement(By.xpath("(//a[@id='nav-link-accountList'])[1]"));
             actions.moveToElement(accountList).perform();

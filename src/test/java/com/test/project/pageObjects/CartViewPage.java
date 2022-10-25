@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 public class CartViewPage extends BaseClass {
 
     private final By itemList = By.xpath("//*[@class=\"a-row a-spacing-base a-spacing-top-base\"]");
-    private final By lblSubTotal = By.xpath("//*[@id=\"sw-subtotal\"]");
-    private final By btnProceedToCheckout = By.xpath("//*[@name=\"proceedToRetailCheckout\"]");
+    private final By lblSubTotal = By.id("sw-subtotal");
+    private final By btnProceedToCheckout = By.name("proceedToRetailCheckout");
     private final By btnGoToCart = By.xpath("(//a[@href='/gp/cart/view.html?ref_=sw_gtc'])[1]");
     private final By addedToCartText = By.xpath("//span[@class='a-size-medium-plus a-color-base sw-atc-text a-text-bold']");
     private final By addToCartInPagination = By.xpath("(//input[@name='submit.addToCart'])[1]");
@@ -23,9 +23,9 @@ public class CartViewPage extends BaseClass {
         super(driver);
     }
 
-    public boolean showItemList(String searchText) throws Exception {
+    public boolean showItemListDisplayed() throws Exception {
         try {
-               return driver.findElement(itemList).isDisplayed();
+            return driver.findElement(itemList).isDisplayed();
         } catch (Exception ex) {
             throw ex;
         }
@@ -67,7 +67,6 @@ public class CartViewPage extends BaseClass {
         try {
             Select se = new Select(driver.findElement(By.xpath("//*[@name=\"quantity.a7a96b91-e8a7-4f46-97d3-f2ed4531d10b\"]")));
             se.selectByValue("2");
-            //driver.findElement(By.xpath("//*[@name=\"quantity.a7a96b91-e8a7-4f46-97d3-f2ed4531d10b\"]")).click();
         } catch (Exception ex) {
             throw ex;
         }
