@@ -53,6 +53,7 @@ public class OrderSubmitTest {
     @Test
     public void verifyAboutSignInSignOutFunctionality() throws Exception {
         try {
+            System.out.println("hello");
             loginFunction.loginToAmazonFunction("dameeshanemini@gmail.com", "1qaz@WSX");
             loginFunction.signOutFunction();
             Assert.assertTrue(loginPage.isRedirectToSignInPageDisplayed());//Assert the signIn page header text
