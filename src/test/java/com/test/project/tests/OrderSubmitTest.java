@@ -3,7 +3,7 @@ package com.test.project.tests;
 import com.test.project.functions.AccountAndListsPageFunction;
 import com.test.project.functions.LoginFunction;
 import com.test.project.functions.OrderSubmissionFunction;
-import com.test.project.pageObjects.*;
+import com.test.project.pageobjects.*;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

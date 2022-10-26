@@ -1,11 +1,7 @@
 package com.test.project.functions;
 
-import com.test.project.pageObjects.AccountListPage;
-import com.test.project.pageObjects.LoginPage;
+import com.test.project.pageobjects.AccountListPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-
-import static com.test.project.utils.BaseClass.driver;
 
 public class AccountAndListsPageFunction {
     private final AccountListPage accountListPage;

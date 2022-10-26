@@ -1,13 +1,7 @@
 package com.test.project.functions;
 
-import com.test.project.pageObjects.*;
-import org.openqa.selenium.By;
+import com.test.project.pageobjects.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
-
-import static com.test.project.utils.BaseClass.driver;
 
 public class OrderSubmissionFunction {
     private final HomePage homePage;

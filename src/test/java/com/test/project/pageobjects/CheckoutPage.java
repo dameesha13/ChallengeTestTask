@@ -1,4 +1,4 @@
-package com.test.project.pageObjects;
+package com.test.project.pageobjects;
 
 import com.test.project.utils.BaseClass;
 import org.openqa.selenium.By;

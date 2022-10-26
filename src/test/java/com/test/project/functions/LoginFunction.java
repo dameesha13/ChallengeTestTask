@@ -1,6 +1,6 @@
 package com.test.project.functions;
 
-import com.test.project.pageObjects.LoginPage;
+import com.test.project.pageobjects.LoginPage;
 import org.openqa.selenium.WebDriver;
 
 public class LoginFunction {
