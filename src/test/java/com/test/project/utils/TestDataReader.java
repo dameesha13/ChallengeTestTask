@@ -10,7 +10,6 @@ import java.util.Map;
 
 public class TestDataReader {
 
-    //public static Logger logger = Logger.getRootLogger();
     public String textFilesPath;
 
     public String lassData;
