@@ -187,7 +187,6 @@ public class CheckoutPage extends BaseClass {
 
     }
 
-    //add payment method
     public void clickLearnMore() throws Exception {
         try {
             driver.findElement(btnLearnMore).click();
@@ -329,5 +328,4 @@ public class CheckoutPage extends BaseClass {
             throw ex;
         }
     }
-
 }

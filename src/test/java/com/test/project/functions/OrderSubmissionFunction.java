@@ -112,27 +112,10 @@ public class OrderSubmissionFunction {
         }
     }
 
-    public void selectCountry() throws Exception {
-        try {
-            checkoutPage.selectCountry();
-            List<WebElement> allOptions = driver.findElements(By.xpath("(//a[@id='address-ui-widgets-countryCode-dropdown-nativeId_208'])[2]"));
-            // Fetch all available options using for loop
-            for (int i = 0; i <= allOptions.size() - 1; i++) {
-                // Using if condition we can select desired option.
-                if (allOptions.get(i).getText().contains("Sri Lanka")) {
-                    allOptions.get(i).click();
-                    break;
-                }
-            }
-        } catch (Exception ex) {
-            throw ex;
-        }
-    }
-
     public void AddAddress(String fullName, String phoneNo, String address, String city, String zip) throws Exception {
         try {
             checkoutPage.clickAddNewAddress();
-            selectCountry();
+            checkoutPage.selectCountry();
             checkoutPage.enterFullName(fullName);
             checkoutPage.enterPhoneNo(phoneNo);
             checkoutPage.enterAddress(address);

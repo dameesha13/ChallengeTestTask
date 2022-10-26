@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class SearchResultsPage extends BaseClass {
-//search word and click enter then load the results of search
 
     private final By selectFirstItemInResults = By.xpath("(//div[@class='a-section a-spacing-base'])[1]");
     private final By resultsTitle = By.xpath("//span[normalize-space()='RESULTS']");
@@ -39,7 +38,6 @@ public class SearchResultsPage extends BaseClass {
     private final By sortByOption = By.xpath("(//span[@class='a-button-inner'])[1]");
     private final By selectPriceLowToHigh = By.xpath("(//span[@id='a-autoid-0-announce'])[1]");
 
-    //pagination
     private final By btnPreviousInPagination = By.xpath("//*[@class=\"s-pagination-item s-pagination-previous s-pagination-button s-pagination-separator\"]");
     private final By btnNextInPagination = By.xpath("//*[@class=\"s-pagination-item s-pagination-next s-pagination-button s-pagination-separator\"]");
     private final By btnCurrentPageInPagination = By.xpath("//*[@class=\"s-pagination-item s-pagination-selected\"]");
@@ -117,7 +115,6 @@ public class SearchResultsPage extends BaseClass {
         }
     }
 
-    //pagination
     public void clickPreviousButton() throws Exception {
         try {
             driver.findElement(btnPreviousInPagination).click();

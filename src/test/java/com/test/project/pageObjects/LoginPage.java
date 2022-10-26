@@ -168,5 +168,4 @@ public class LoginPage extends BaseClass {
             throw ex;
         }
     }
-
 }

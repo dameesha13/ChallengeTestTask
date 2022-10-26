@@ -32,6 +32,4 @@ public class AccountAndListsPageFunction {
             throw ex;
         }
     }
-
-
 }

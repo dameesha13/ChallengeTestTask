@@ -103,6 +103,4 @@ public class CartViewPage extends BaseClass {
             throw ex;
         }
     }
-
-
 }

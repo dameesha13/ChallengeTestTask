@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-
 public class AccountListPage extends BaseClass {
 
     private final By clickAccountAndList = By.xpath("(//a[@id='nav-link-accountList'])[1]");
@@ -165,7 +164,6 @@ public class AccountListPage extends BaseClass {
         }
     }
 
-    //after click signout link
     public Boolean isRedirectToSignInPageDisplayed() throws Exception {
         try {
             return driver.findElement(signInHeaderText).isDisplayed();
@@ -173,7 +171,6 @@ public class AccountListPage extends BaseClass {
             throw ex;
         }
     }
-
 
     public boolean showHeaderYourListsTextDisplayed() throws Exception {
         try {
