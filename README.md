@@ -12,12 +12,12 @@ This project contains automated test cases for a Amazon.com site.
 * Git
 
 ###### Checkout the branch
-      git clone (https://github.com/dameesha13)
+      git clone (https://github.com/dameesha13/ChallengeTestTask.git)
 
 ###### Run the code using maven goal
 
 ```
-mvn clean install test -DsuiteXmlFile="AllServicesRegression.xml" 
+mvn clean install test -DsuiteXmlFile="AmazonUIAutomation.xml" 
 ```
 
 Project structure as below.
