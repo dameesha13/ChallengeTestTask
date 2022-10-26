@@ -1,6 +1,6 @@
 # UI Automation
 
-This project contains automated test cases for a Amazon.com site.
+This project contains automated test cases for an Amazon shopping site.
 
 #### **Technology Stack**
 
@@ -30,7 +30,7 @@ Project structure as below.
     ├── test
         ├── java
             ├── functions
-            ├── pageObjects
+            ├── pageobjects
             ├── tests
             ├── utils
         ├── resources
