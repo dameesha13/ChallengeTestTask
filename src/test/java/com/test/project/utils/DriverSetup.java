@@ -10,7 +10,7 @@ public class DriverSetup {
     public static WebDriver setUp() {
 
         //set driver location
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dameesha Sarathchand\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/dameesha/Downloads/driver/chromedriver");
 
         //Initialize the webDriver
         driver = new ChromeDriver();
