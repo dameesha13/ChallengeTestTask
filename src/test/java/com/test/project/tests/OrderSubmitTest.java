@@ -41,9 +41,12 @@ public class OrderSubmitTest {
     public void verifyAboutSignInSignOutFunctionality() throws Exception {
         try {
             loginFunction.loginToAmazonFunction("testskyemail8992@gmail.com", "1qaz@WSX");
+            Assert.assertEquals("Hello, sky123", orderSubmissionFunction.getHomePage().lblUserName());
             loginFunction.signOutFunction();
             Assert.assertTrue(loginPage.isRedirectToSignInPageDisplayed());//Assert the signIn page header text
             Assert.assertTrue(loginPage.isLinkConditionsOfUseDisplayed()); //Assert the conditions of use
+            loginFunction.loginToAmazonWithInvalidEmail("testskyemail89", "1qaz@WSX");
+            Assert.assertTrue(loginPage.isWarningMessageDisplayed()); //Assert warning message when providing invalid email
         } catch (Exception e) {
             log.info("verifyAboutSignInSignOutFunctionality : FAIL");
             throw e;
@@ -55,7 +58,6 @@ public class OrderSubmitTest {
     public void searchItemAndAddAndRemoveFromCart() throws Exception {
         try {
             loginFunction.loginToAmazonFunction("testskyemail8992@gmail.com", "1qaz@WSX");
-            Assert.assertEquals("Hello, sky123", orderSubmissionFunction.getHomePage().lblUserName());
             orderSubmissionFunction.typeSearchWord("tshirt for women");
             orderSubmissionFunction.addItemsToCart();
             orderSubmissionFunction.deleteItemFromSideBarCart();
